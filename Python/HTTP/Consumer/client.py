@@ -4,16 +4,16 @@ import json
 import tornado.websocket
 import tornado.ioloop
 
-ioloop = tornado.ioloop.IOLoop.current()
+targetURI = 'ws://192.168.11.27:8200/sys1/ws/temperature'
 
 def on_message(message):
     print(message)
 
 async def main():
-    url = 'ws://127.0.0.1:8200/sys1/ws/temperature'
-    conn = await tornado.websocket.websocket_connect(url, on_message_callback=on_message)
+    conn = await tornado.websocket.websocket_connect(targetURI, on_message_callback=on_message)
     while True:
-        conn.write_message('test')
-        await tornado.gen.sleep(1)
+        #conn.write_message('[]')
+        await tornado.gen.sleep(0.5)
 
+ioloop = tornado.ioloop.IOLoop.current()
 ioloop.run_sync(main)
