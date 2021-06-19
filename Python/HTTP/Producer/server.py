@@ -84,3 +84,5 @@ if __name__ == "__main__":
   srv.listen(PORT)
   tornado.ioloop.IOLoop.current().start()
 
+# sudo python3 -m pip install tornado
+# sudo pip3 install w1thermsensor
