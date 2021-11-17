@@ -1,0 +1,7 @@
+systemName="tempsys-342"
+sraddress="127.0.0.1"
+srport=8443
+
+truststore="/tmp/truststore.pem"
+certFile="/tmp/service_registry.pem"
+keyFile="/tmp/service_registry.key"
