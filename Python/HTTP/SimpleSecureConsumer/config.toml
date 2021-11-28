@@ -2,6 +2,6 @@ systemName="service_registry"
 sraddress="127.0.0.1"
 srport=8443
 
-truststore="truststore.pem"
+trustStore="truststore.pem"
 certFile="service_registry.pem"
 keyFile="service_registry.key"
