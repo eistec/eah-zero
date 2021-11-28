@@ -22,11 +22,12 @@ if False: # check Service registry
   else:
     print('Request failed!\n')
 
-# use the DataManager instead
+# use the DataManager instead (should use Sr or Orch instead!)
 else:
   url = "https://" + SR_ADDRESS + ":" + str(8461) + "/datamanager/proxy"
   cert = (cert_file, key_file)
-  r = requests.get(url + "/service_registry.testcloud2.aitia.arrowhead.eu/test", cert=cert, verify=ca_file)
+  r = requests.get(url + "/serviceregistry.testcloud2.aitia.arrowhead.eu/test", cert=cert, verify=ca_file)
+  r = requests.get(url + "/serviceregistry/test", cert=cert, verify=ca_file)
   if r.status_code == 200:
     print(r.text)
   else:

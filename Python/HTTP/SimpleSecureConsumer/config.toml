@@ -3,5 +3,5 @@ sraddress="127.0.0.1"
 srport=8443
 
 trustStore="truststore.pem"
-certFile="service_registry.pem"
-keyFile="service_registry.key"
+certFile="serviceregistry.pem"
+keyFile="serviceregistry.key"
