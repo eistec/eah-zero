@@ -9,11 +9,11 @@ SR_ADDRESS = config['sraddress']
 SR_PORT = config['srport']
 SYS_NAME = config['systemName']
 
-ca_file = config['trustStore'] #"truststore.pem"
-cert_file = config['certFile'] #"service_registry.pem"
-key_file = config['keyFile'] #"service_registry.key"
+ca_file = config['trustStore']
+cert_file = config['certFile']
+key_file = config['keyFile']
 
-if False: # check Service registry
+if False: # check ServiceRegistry
   url = "https://" + SR_ADDRESS + ":" + str(SR_PORT) + "/serviceregistry"
   cert = (cert_file, key_file)
   r = requests.get(url + "/echo", cert=cert, verify=ca_file)
@@ -22,7 +22,7 @@ if False: # check Service registry
   else:
     print('Request failed!\n')
 
-# use the DataManager instead (should use Sr or Orch instead!)
+# use the DataManager instead (should use ServiceRegistry or Orchestrator instead!)
 else:
   url = "https://" + SR_ADDRESS + ":" + str(8461) + "/datamanager/proxy"
   cert = (cert_file, key_file)
@@ -34,4 +34,3 @@ else:
     print('Request failed! with ' + str(r.status_code)  + '\n')
     print(r.text)
 
-  
